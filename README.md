@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-# TA-col362-632
-=======
-#TA-col362-632
->>>>>>> cd8baa167131039f2ba2492653fa6a60329a39a5
+This repo contains project setup of dbms(col 362-632)

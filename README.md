@@ -1,1 +1,0 @@
-This repo contains project setup of dbms(col 362-632)

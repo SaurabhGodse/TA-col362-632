@@ -10,9 +10,9 @@ MAIL_SERVER = "@iitd.ac.in"
 ###########################################################################
 
 SENDER = {
-    "email": "",
-    "uname": "",
-    "pswd": "",
+    "email": "abc@xyz.com",
+    "uname": "lasdjk",
+    "pswd": "lssdkjf",
 }
 
 SMTP_SERVER = ""
@@ -39,7 +39,7 @@ Port: 5432
 Database Name: {uname}
 
 Regards,
-Shadab & Harish
+Vivek, Anjali & Saurabh
 """
 
 ###########################################################################

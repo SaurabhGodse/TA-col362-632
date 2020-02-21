@@ -24,6 +24,6 @@ def group_IP(username):
 
 if __name__ == "__main__":
 	# only for testing purpose
-	
+	print(my_IP())
 	print(group_IP("group_13"))
 	print(group_IP("13"))

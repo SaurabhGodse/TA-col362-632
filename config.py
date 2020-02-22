@@ -1,11 +1,10 @@
 
 SERVERS = {
     "vpl1": "10.17.50.126",
-    "vpl2": "10.17.10.24",
-    "vpl3": "10.17.10.78",
-    # "vpl1": "server-1",
-    # "vpl2": "server-2",
-    # "vpl3": "server-3",
+    "vpl2": "10.17.50.126",
+    "vpl3": "10.17.50.126",
+    # "vpl2": "10.17.10.24",
+    # "vpl3": "10.17.10.78",
     
 }
 
@@ -41,8 +40,6 @@ Use the aforementioned credentials to connect to this DB:
 Host: {host}
 Port: 5432
 Database Name: {uname}
-
-Note : Please ignore this mail this is just for testing purpose of mass mailer we've designed.
 
 Regards,
 Saurabh, Vivek & Anjali

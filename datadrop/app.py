@@ -44,8 +44,9 @@ def index():
     # So that load is eually balanced
     # and we only have to read log files present locally on disk
 
-    if my_IP() != group_IP(user):
-        return redirect("http://%s:%d" % (group_IP(user), 5000))
+    # if my_IP() != group_IP(user):
+        # return redirect("http://%s:%d" % (group_IP(user), 5000))
+        # return redirect("http://%s:%d" % ("0.0.0.0", 5000))
     
     if request.method == "GET":
         return render_template("base.html", group = user.strip().split("_")[-1])
@@ -150,4 +151,4 @@ def pg_load(user, pswd, dump_path):
     return msg
 
 if __name__ == "__main__":
-    app.run(host="localhost", port=5004)
+    app.run(host="0.0.0.0", port=5001)

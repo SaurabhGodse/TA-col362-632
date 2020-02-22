@@ -29,7 +29,7 @@ def setup_connection(sender):
     smtp = smtplib.SMTP(SMTP_SERVER)
     user = sender["uname"]
     password = sender["pswd"]
-#     smtp.connect(SENDER["email"])
+    smtp.connect("smtp.iitd.ernet.in")
     smtp.starttls()
     smtp.login(user, password)
     return smtp
@@ -48,11 +48,13 @@ def kerberosId(entryNO): # 2019MCS2574  mcs192574
 
 if __name__=="__main__":
     conn = setup_connection(SENDER)
+    print("Connection established...")
     with open(RECIPIENTS_FILE) as recepients_file:
         reader = csv.reader(recepients_file)
         next(reader)
         for row in reader:
-            group = row[0].strip()
+            # print(row)
+            group = row[0].strip().lower()
             names = [each.strip() for each in row[1 : -1 : 2] if each.strip()]
             entry_numbers = [each.strip() for each in row[2 : -1 : 2] if each.strip()]
             if group not in CREDENTIALS:
@@ -75,8 +77,9 @@ if __name__=="__main__":
                 msg['From'] = SENDER['email']
                 msg['To'] = ", ".join(to_list)
                 print("Sending credentials to {}".format(msg['To']))
-                print(msg.as_string())
-#                 conn.sendmail(SENDER['email'], to_list, msg.as_string())
+                # print(msg.as_string())
+                # break
+                conn.sendmail(SENDER['email'], to_list, msg.as_string())
                 
                 
                 

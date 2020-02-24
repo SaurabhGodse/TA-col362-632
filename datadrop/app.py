@@ -44,8 +44,8 @@ def index():
     # So that load is eually balanced
     # and we only have to read log files present locally on disk
 
-    # if my_IP() != group_IP(user):
-        # return redirect("http://%s:%d" % (group_IP(user), 5000))
+    if my_IP() != group_IP(user):
+        return redirect("http://%s:%d" % (group_IP(user), 5000))
         # return redirect("http://%s:%d" % ("0.0.0.0", 5000))
     
     if request.method == "GET":
@@ -83,7 +83,7 @@ def index():
         # Finished writing chunks
         total_chunks = int(request.form['dztotalchunkcount'])
         if current_chunk + 1 == total_chunks:
-            msg = pg_load(user, request.autorization.password, file_path)
+            msg = pg_load(user, request.authorization.password, file_path)
 
             # Crude way of detecting that an error has occured
             if b"ERROR:" in msg:
@@ -130,7 +130,10 @@ def pg_load(user, pswd, dump_path):
     log.debug("%s - Cleanup complete", user)
 
     # Load Databases
-    cmd = 'PGPASSWORD = "vpl-362" psql -h {ip} -d {db} -U "postgres" < "{dump}"'.format(pswd=pswd, ip=ip, 
+    print("\n\n\n\n")
+    print(dump_path)
+    print("\n\n\n\n")
+    cmd = 'PGPASSWORD = "vpl-362" psql -h {ip} -d {db} -U {user} < "{dump}"'.format(pswd=pswd, ip=ip, 
     db=user, user=user, dump=dump_path)
     log.debug("%s - Running command : %s", user, cmd)
     msg = subprocess.check_output(cmd, shell=True, stderr=subprocess.STDOUT)
@@ -151,4 +154,4 @@ def pg_load(user, pswd, dump_path):
     return msg
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5001)
+    app.run(host="0.0.0.0", port=5000, debug=True)

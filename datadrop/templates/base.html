@@ -93,13 +93,13 @@
     <script type="application/javascript">
         Dropzone.options.dropper = {
             url: "/",
-            timeout: 1800000, // ms
+            timeout: 3600000, // ms
 
-            maxFilesize: 4096, // MB
+            maxFilesize: 10240, // MB
 
             chunking: true,
             forceChunking: true,
-            chunkSize: 1000000, // bytes
+            chunkSize: 10000000, // bytes
             // retryChunks: true, // This will require changes in Python code as well?
 
             maxFiles: 1,

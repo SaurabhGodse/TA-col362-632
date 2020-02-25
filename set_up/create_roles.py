@@ -14,7 +14,6 @@ from utils import group_IP
 
 # In[5]:
 
-
 QUERY = """
 REVOKE ALL PRIVILEGES ON ALL TABLES IN SCHEMA public FROM {user};
 REVOKE ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public FROM {user};
@@ -27,6 +26,11 @@ GRANT CONNECT ON DATABASE {group} TO {user};
 GRANT ALL PRIVILEGES ON DATABASE {group} TO {user};
 GRANT USAGE ON SCHEMA public TO {user};
 GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO {user};
+"""
+
+QUERY2 = """
+DROP USER IF EXISTS {group};
+CREATE USER {user} WITH PASSWORD \'{pswd}\';
 """
 
 # REVOKE CONNECT ON DATABASE {group} FROM {user};
@@ -72,24 +76,34 @@ def connect(ip):
 
 
 if __name__== '__main__':
-    for group in CREDENTIALS.keys():
-        conn = connect(group_IP(group))
-        # print("Connected successfully...")
-        query = QUERY.format(group=group, user = group, pswd=CREDENTIALS[group])
-        # print(query)
-        conn.autocommit = True
-        conn.cursor().execute("DROP DATABASE IF EXISTS {};".format(group))
-        conn.commit()
-        conn.cursor().execute(query)
-        conn.commit()
-        conn.cursor().execute("CREATE DATABASE {};".format(group))
-        conn.cursor().execute("REVOKE ALL PRIVILEGES ON DATABASE {} FROM public;".format(group))
-        conn.commit()
-        query = QUERY1.format(group=group, user = group, pswd=CREDENTIALS[group])
+	for group in CREDENTIALS.keys():
+		conn = connect(group_IP(group))
+		# print("Connected successfully...")
+		try:
+			query = QUERY.format(group=group, user = group, pswd=CREDENTIALS[group])
+		# print(query)
+			conn.autocommit = True
+			conn.cursor().execute("DROP DATABASE IF EXISTS {};".format(group))
+			conn.commit()
+			conn.cursor().execute(query)
+			conn.commit()
+		except:
+			query = QUERY2.format(group=group, user = group, pswd=CREDENTIALS[group])
+		# print(query)
+			conn.autocommit = True
+			conn.cursor().execute("DROP DATABASE IF EXISTS {};".format(group))
+			conn.commit()
+			conn.cursor().execute(query)
+			conn.commit()
 
-        conn.cursor().execute(query)
-        conn.commit()
-        conn.close()
-        
+		conn.cursor().execute("CREATE DATABASE {};".format(group))
+		conn.cursor().execute("REVOKE ALL PRIVILEGES ON DATABASE {} FROM public;".format(group))
+		conn.commit()
+		query = QUERY1.format(group=group, user = group, pswd=CREDENTIALS[group])
+
+		conn.cursor().execute(query)
+		conn.commit()
+		conn.close()
+
         
 

@@ -70,29 +70,29 @@ def index():
         except OSError:
             return make_response(("Unable to delete old uploads.", 400))
         
-        # Write chunk to file
-        try:
-            with open(file_path, 'ab') as f:
-                f.seek(int(request.form['dzchunkbyteoffset']))
-                f.write(file.stream.read())
-        except OSError:
-            err = "Couldn't write to file"
-            log.exception(err)
-            return make_response((err, 500))
-        
-        # Finished writing chunks
-        total_chunks = int(request.form['dztotalchunkcount'])
-        if current_chunk + 1 == total_chunks:
-            msg = pg_load(user, request.authorization.password, file_path)
+    # Write chunk to file
+    try:
+        with open(file_path, 'ab') as f:
+            f.seek(int(request.form['dzchunkbyteoffset']))
+            f.write(file.stream.read())
+    except OSError:
+        err = "Couldn't write to file"
+        log.exception(err)
+        return make_response((err, 500))
+    
+    # Finished writing chunks
+    total_chunks = int(request.form['dztotalchunkcount'])
+    if current_chunk + 1 == total_chunks:
+        msg = pg_load(user, request.authorization.password, file_path)
 
-            # Crude way of detecting that an error has occured
-            if b"ERROR:" in msg:
-                log.error("%s - PG SQL returned : %s", user, msg.decode("ascii", "ignore"))
-                return make_response((msg, 400))
-            else:
-                log.debug("%s - Data upload successful", user)
-                return make_response((msg, 200))
-        return make_response(("Chunk upload successful", 200))
+        # Crude way of detecting that an error has occured
+        if b"ERROR:" in msg:
+            log.error("%s - PG SQL returned : %s", user, msg.decode("ascii", "ignore"))
+            return make_response((msg, 400))
+        else:
+            log.debug("%s - Data upload successful", user)
+            return make_response((msg, 200))
+    return make_response(("Chunk upload successful", 200))
 
 def connect(ip, user, pswd, dbname="postgres"):
     log.debug("%s - Connecting to %s:5432" % (user, ip))

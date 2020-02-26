@@ -1,0 +1,27 @@
+***Instructions for Project 1 (COL-362/632)***
+
+Each team will receive following details in mail:
+
+1. Group name
+2. Username (same as group name)
+3. Password
+4. URL for dataupload
+5. Server IP
+
+Q. How to create database dump file?
+
+--> You have to create dump file using following command :
+	pg_dump -d dbname -h localhost -U username > dbname.sql
+
+Note : pg_dump supports multiple type of file format to export dump but you have to use ".sql" only.
+
+Q. How to upload the dump file?
+
+--> Procedure to upload dump file is as follows :
+
+	1. Open URL provided in mail.
+	2. Login using credentials provided in mail.
+	3. Use drag and drop menu to upload dump file.
+
+Warning : Do not share your login credentials.
+

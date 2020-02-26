@@ -77,9 +77,9 @@ if __name__=="__main__":
                 msg['From'] = SENDER['email']
                 msg['To'] = ", ".join(to_list)
                 print("Sending credentials to {}".format(msg['To']))
-                # print(msg.as_string())
+                print(msg.as_string())
                 # break
-                conn.sendmail(SENDER['email'], to_list, msg.as_string())
+                # conn.sendmail(SENDER['email'], to_list, msg.as_string())
                 
                 
                 

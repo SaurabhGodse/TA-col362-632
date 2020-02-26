@@ -1,7 +1,39 @@
 Group_ID,Student Name 1,Entry Number,Student Name 2,Entry Number,Student Name 3,Entry Number,Data SIze (Approx)
-group_1,Vivek Singh,2019MCS2574,Akshay,2019MCS2556,,,20
-group_2,Phaneesh,2018MCS2014,Prashant,2018MCS2021,Gaurav,2018MCS2141,25
-group_3,Garima,2018MCS2017,Anshu,2018MCS2142,Namrata,2018MCS2840,50
-group_4,Anant Gulgulia,2019MCS2558,Komal,2019MCS2564,,,56
-group_5,Meraj ,2019MCS2565,,,,,60
-group_6,Sriram SV,2018MCS2092,Suraj S,2018MCS2024,,,
+group_1,Ajith B,2017CS10331,Anil Uchadiya,2017CS10327,Sai Vijay,2017CS10385,900 MB
+group_2,Atishya Jain,2016CS50393,Mayank Singh Chauhan,2016CS50394,Avaljot Singh,2016CS50389,309.7 MB
+group_3,Aaditya Sinha,2019MCS2554,Akshay Gupta,2019MCS2556,Anant Gulgulia,2019MCS2558,252 MB
+group_4,Anant Jain,2019MCS2557,Pritesh Kumar Srivastava,2019MCS2658,,,400 MB
+group_5,Kokku Chinmai Sai Nagendra,2017CS10343,Kaivalya Swami,2017CS10339,Navneel Mandal,2017CS50414,2 GB
+group_6,Gaurav Singh,2011MT50600,Mohinder Meena,2012MT50605,,,4 MB
+group_7,Kishan Patel,2016MT1022,Sudesh Wasnik,2016MT10637,,,2GB
+group_8,Akshay Neema,2016CS10323,Siddhant Shingi,2016CS10310,Riya Singh,2016CS50388,1.1 GB
+group_9,Dhananjay Kajla,2017CS50405,Yaduraj Rao,2017CS10503,,,200 MB
+group_10,Gajera Dev,2016EE10431,Harshit Jain,2016EE10443,Nalawade Sarvesh Bharat,2016EE10442,110 MB
+group_11,Donapati Hardhik,2016CS10339,Khammampati Anrirudh,2016CS10362,Dangeti Bharadwaj,2016CS10360,36MB
+group_12,Ansh Prakash,2016CS10367,Kshiitij Gupta,2016ME20760,Pranjal Agarwal,2016ME20764,80 MB
+group_13,Anshshiv Garg,2016ME10683,Ayush Srivastava,2016ME10830,Deep Gandhi ,2017EE10445,810MB
+group_14,Varun Poddar,2016CH10113,,,,,25 MB
+group_15,Shikhar Makker,2016CH70156,Namrata Tripathi,2016CH10074,Ridhi Jain ,2016TT10868,42.6 MB
+group_16,Komal Chauhan,2019MCS2564,Disha Kathin,2019MCS2561,Pratik Karia,2019MCS2568,2.8 GB
+group_17,abhishek singh,2015CS10205,,,,,1MB
+group_18,Yash Malviya,2016CS50403,Sanket Sanjaypant Hire,2016CS50404,Vasudev Singh,2016MT60660,196 MB
+group_19,Twinkal Meena,2015CS50297,Gaurav Yadav,2015CS50283,Hire Vikram Umaji,2015CS10227,109 MB
+group_20,Praket Parth,2016ME20771,Arsh Sidana,2016ME20771,Nishtha Saxena,2016ME20768,8 GB
+group_21,Dipanshu Sharma,2017EE10306,Nihar Modi,2017EE10461,,,20MB
+group_22,Saurav Kumar Sharma,2016MT60655,Siddartha Biswas,2016MT60645,Pulkit Shakya,2016MT60659,50 MB
+group_23,Chinmay Singh,2015MT60558,Pranav Kumar,2015MT60563,Md Tausif Alam,2015MT60561,372 MB
+group_24,Gulshan Jangid ,2014CS50285,Ravi Khannawalia ,2015MT60565,Randheer Kumar ,2015MT60564,3.1 GB
+group_25,K Yadav,2019MCS2656,Kiran Bhargav,2019MCS2792,,,11MB
+group_26,Sanskar pareta,2017CS10373,Shashank shekhar,2017CS10374,,,27.9 MB
+group_27,Kailash Kumawat,2017CS10338,Ravneesh Kumar,2017CS10368,Sanjay Meena,2017CS10372,298.59MB
+group_28,Kamalesh Neerasa,2017CS10341,Datta TVSS,2017CS10382,Sravya Sri vusse,2017CS10390,500MB
+group_29,Pranjal Kacholia,2016CH10098,Rajeev Bhomia ,2016CH10099,Devesh Joshi ,2016EE10437,280 MB
+group_30,Prafful Ravuri,2017CS10369,Mahak,2017CS10219,K Lalith Srinivas,2017CS10340,600MB
+group_31,Saumya Gupta,2016ME10689,Shashwat Maiti,2016ME10702,Rohit Kumar Singh,2016ME10080,200MB
+group_32,M Veeramakali Vignesh,2017CS10346,Hrithik Maheshwari,2017CS10335,Harkanwar Singh,2017CS10334,40MB
+group_33,Abhishek Maderana,2016CS50399,Hardik Khichi,2016CS50404,,,100MB
+group_34,Pushpam Anand,2016CS10347,Rahul Bansal,2016CS10344,Vinayak Rastogi,2016CS10345,27MB
+group_35,Ansh Sapra,2016CS50392,Aniket Kumar ,2016CS50397,Vasu Jain,2017CS10387,1GB
+group_36,Md Asif Anwar,2017TT10922,Minhaj Shakeel,2016CS10354,Zia Kamran,2017TT10925,200 MB
+group_37,Shashank Goel,2016CS10332,Parth Shah,2016CS10333,Yash Raj Gupta,2016CS10337,300 MB
+group_38,Kulkarni Nikhil Dilip,2016CS10340,Chetan Mittal,2016CS10343,Anubhav Bhatia,2016EE10385,NA 

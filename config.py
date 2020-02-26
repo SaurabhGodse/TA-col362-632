@@ -49,7 +49,9 @@ Saurabh, Vivek & Anjali
 
 CREDENTIALS = {
     # Admin account
-    "test_0": "test",
+    "test_0": "test0",
+    "test_1": "test1",
+    "test_2": "test2",
     "group_0": "thesecret",
 
     # Passwords for 40 groups of students

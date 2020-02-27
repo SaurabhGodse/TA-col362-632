@@ -1,4 +1,4 @@
-import os 
+import os
 import sys
 import psycopg2
 import shutil
@@ -15,7 +15,7 @@ from werkzeug.utils import secure_filename
 sys.path.append("..")
 from config import CREDENTIALS, SERVERS
 from utils import my_IP, group_IP
- 
+
 
 # setup custom logging
 log = logging.getLogger('datadrop')
@@ -47,10 +47,10 @@ def index():
     if my_IP() != group_IP(user):
         return redirect("http://%s:%d" % (group_IP(user), 5000))
         # return redirect("http://%s:%d" % ("0.0.0.0", 5000))
-    
+
     if request.method == "GET":
         return render_template("base.html", group = user.strip().split("_")[-1])
-    
+
     file = request.files['file']
 
     # keep in mind that this function is called multiple times for the same file!
@@ -58,7 +58,7 @@ def index():
     student_dir = os.path.join("../uploads", user)
     if not os.path.exists(student_dir):
         os.makedirs(student_dir)
-    
+
     file_path = os.path.join(student_dir, secure_filename(file.filename))
 
     if os.path.exists(student_dir) and current_chunk == 0:
@@ -69,7 +69,7 @@ def index():
             os.makedirs(student_dir)
         except OSError:
             return make_response(("Unable to delete old uploads.", 400))
-        
+
     # Write chunk to file
     try:
         with open(file_path, 'ab') as f:
@@ -79,7 +79,7 @@ def index():
         err = "Couldn't write to file"
         log.exception(err)
         return make_response((err, 500))
-    
+
     # Finished writing chunks
     total_chunks = int(request.form['dztotalchunkcount'])
     if current_chunk + 1 == total_chunks:
@@ -133,7 +133,7 @@ def pg_load(user, pswd, dump_path):
     print("\n\n\n\n")
     print(dump_path)
     print("\n\n\n\n")
-    cmd = 'PGPASSWORD = "vpl-362" psql -h {ip} -d {db} -U {user} < "{dump}"'.format(pswd=pswd, ip=ip, 
+    cmd = 'PGPASSWORD="vpl-362" psql -h {ip} -d {db} -U postgres < "{dump}"'.format(pswd=pswd, ip=ip,
     db=user, user=user, dump=dump_path)
     log.debug("%s - Running command : %s", user, cmd)
     msg = subprocess.check_output(cmd, shell=True, stderr=subprocess.STDOUT)
@@ -142,13 +142,20 @@ def pg_load(user, pswd, dump_path):
     # Revoke Privileges
     conn = connect(ip, "postgres", "vpl-362", dbname=user)
     log.debug("%s- Revoking Privileges", user)
+    # query = """
+    # REVOKE CREATE ON SCHEMA public FROM public;
+    # GRANT ALL ON schema public TO postgres;
+    # GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO {user};
+    # GRANT SELECT ON ALL TABLES IN SCHEMA public TO {user};
+    # """
+
     query = """
-    REVOKE CREATE ON SCHEMA public FROM public;
-    GRANT ALL ON schema public TO postgres;
-    GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO {user};
-    GRANT SELECT ON ALL TABLES IN SCHEMA public TO {user};
+    GRANT CONNECT ON DATABASE {group} TO {user};
+    GRANT ALL PRIVILEGES ON DATABASE {group} TO {user};
+    GRANT USAGE ON SCHEMA public TO {user};
+    GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO {user};
     """
-    conn.cursor().execute(query.format(user=user))
+    conn.cursor().execute(query.format(user=user,group=user))
     conn.commit()
     conn.close()
     return msg

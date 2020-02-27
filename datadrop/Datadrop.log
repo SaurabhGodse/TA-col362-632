@@ -1,0 +1,69 @@
+2020-02-26 16:38:57,054 : DEBUG :    pg_load() : group_0 - Performing cleanup before loading
+2020-02-26 16:38:57,054 : DEBUG :    connect() : postgres - Connecting to 10.17.50.126:5432
+2020-02-26 16:38:57,108 : DEBUG :    cleanup() : group_0 - query - DROP DATABASE IF EXISTS group_0;, status - DROP DATABASE
+2020-02-26 16:38:57,221 : DEBUG :    cleanup() : group_0 - query - CREATE DATABASE group_0;, status - CREATE DATABASE
+2020-02-26 16:38:57,222 : DEBUG :    pg_load() : group_0 - Cleanup complete
+2020-02-26 16:38:57,222 : DEBUG :    pg_load() : group_0 - Running command : PGPASSWORD = "vpl-362" psql -h 10.17.50.126 -d group_0 -U group_0 < "../uploads/group_0/mydb.sql"
+2020-02-26 16:53:19,208 : DEBUG :    pg_load() : group_0 - Performing cleanup before loading
+2020-02-26 16:53:19,208 : DEBUG :    connect() : postgres - Connecting to 10.17.50.126:5432
+2020-02-26 16:53:19,249 : DEBUG :    cleanup() : group_0 - query - DROP DATABASE IF EXISTS group_0;, status - DROP DATABASE
+2020-02-26 16:53:19,385 : DEBUG :    cleanup() : group_0 - query - CREATE DATABASE group_0;, status - CREATE DATABASE
+2020-02-26 16:53:19,385 : DEBUG :    pg_load() : group_0 - Cleanup complete
+2020-02-26 16:53:19,385 : DEBUG :    pg_load() : group_0 - Running command : PGPASSWORD="vpl-362" psql -h 10.17.50.126 -d group_0 -U postgres < "../uploads/group_0/mydb.sql"
+2020-02-26 16:54:03,549 : DEBUG :    pg_load() : group_0 - Database Loading Complete
+2020-02-26 16:54:03,550 : DEBUG :    connect() : postgres - Connecting to 10.17.50.126:5432
+2020-02-26 16:54:03,561 : DEBUG :    pg_load() : group_0- Revoking Privileges
+2020-02-26 16:54:03,565 : DEBUG :      index() : group_0 - Data upload successful
+2020-02-26 23:08:02,368 : DEBUG :    pg_load() : group_3 - Performing cleanup before loading
+2020-02-26 23:08:02,368 : DEBUG :    connect() : postgres - Connecting to 10.17.50.126:5432
+2020-02-26 23:08:02,588 : DEBUG :    cleanup() : group_3 - query - DROP DATABASE IF EXISTS group_3;, status - DROP DATABASE
+2020-02-26 23:08:02,722 : DEBUG :    cleanup() : group_3 - query - CREATE DATABASE group_3;, status - CREATE DATABASE
+2020-02-26 23:08:02,723 : DEBUG :    pg_load() : group_3 - Cleanup complete
+2020-02-26 23:08:02,723 : DEBUG :    pg_load() : group_3 - Running command : PGPASSWORD="vpl-362" psql -h 10.17.50.126 -d group_3 -U postgres < "../uploads/group_3/pgsql.sql"
+2020-02-26 23:08:09,911 : DEBUG :    pg_load() : group_3 - Database Loading Complete
+2020-02-26 23:08:09,911 : DEBUG :    connect() : postgres - Connecting to 10.17.50.126:5432
+2020-02-26 23:08:09,921 : DEBUG :    pg_load() : group_3- Revoking Privileges
+2020-02-26 23:08:09,925 : DEBUG :      index() : group_3 - Data upload successful
+2020-02-27 16:05:15,370 : DEBUG :    pg_load() : group_0 - Performing cleanup before loading
+2020-02-27 16:05:15,370 : DEBUG :    connect() : postgres - Connecting to 10.17.50.126:5432
+2020-02-27 16:05:15,590 : DEBUG :    cleanup() : group_0 - query - DROP DATABASE IF EXISTS group_0;, status - DROP DATABASE
+2020-02-27 16:05:15,728 : DEBUG :    cleanup() : group_0 - query - CREATE DATABASE group_0;, status - CREATE DATABASE
+2020-02-27 16:05:15,728 : DEBUG :    pg_load() : group_0 - Cleanup complete
+2020-02-27 16:05:15,728 : DEBUG :    pg_load() : group_0 - Running command : PGPASSWORD="vpl-362" psql -h 10.17.50.126 -d group_0 -U postgres < "../uploads/group_0/newdb.sql"
+2020-02-27 16:05:15,831 : DEBUG :    pg_load() : group_0 - Database Loading Complete
+2020-02-27 16:05:15,831 : DEBUG :    connect() : postgres - Connecting to 10.17.50.126:5432
+2020-02-27 16:05:15,841 : DEBUG :    pg_load() : group_0- Revoking Privileges
+2020-02-27 16:05:15,845 : DEBUG :      index() : group_0 - Data upload successful
+2020-02-27 16:07:28,672 : DEBUG :    pg_load() : group_0 - Performing cleanup before loading
+2020-02-27 16:07:28,672 : DEBUG :    connect() : postgres - Connecting to 10.17.50.126:5432
+2020-02-27 16:07:28,719 : DEBUG :    cleanup() : group_0 - query - DROP DATABASE IF EXISTS group_0;, status - DROP DATABASE
+2020-02-27 16:07:28,841 : DEBUG :    cleanup() : group_0 - query - CREATE DATABASE group_0;, status - CREATE DATABASE
+2020-02-27 16:07:28,841 : DEBUG :    pg_load() : group_0 - Cleanup complete
+2020-02-27 16:07:28,842 : DEBUG :    pg_load() : group_0 - Running command : PGPASSWORD="vpl-362" psql -h 10.17.50.126 -d group_0 -U postgres < "../uploads/group_0/newdb.sql"
+2020-02-27 16:07:28,929 : DEBUG :    pg_load() : group_0 - Database Loading Complete
+2020-02-27 16:07:28,929 : DEBUG :    connect() : postgres - Connecting to 10.17.50.126:5432
+2020-02-27 16:07:28,937 : DEBUG :    pg_load() : group_0- Revoking Privileges
+2020-02-27 16:07:28,940 : DEBUG :      index() : group_0 - Data upload successful
+2020-02-27 19:15:33,192 : DEBUG :    pg_load() : group_36 - Performing cleanup before loading
+2020-02-27 19:15:33,192 : DEBUG :    connect() : postgres - Connecting to 10.17.50.126:5432
+2020-02-27 19:15:33,244 : DEBUG :    cleanup() : group_36 - query - DROP DATABASE IF EXISTS group_36;, status - DROP DATABASE
+2020-02-27 19:15:33,389 : DEBUG :    cleanup() : group_36 - query - CREATE DATABASE group_36;, status - CREATE DATABASE
+2020-02-27 19:15:33,390 : DEBUG :    pg_load() : group_36 - Cleanup complete
+2020-02-27 19:15:33,390 : DEBUG :    pg_load() : group_36 - Running command : PGPASSWORD="vpl-362" psql -h 10.17.50.126 -d group_36 -U postgres < "../uploads/group_36/newcheckout.csv"
+2020-02-27 19:15:33,487 : DEBUG :    pg_load() : group_36 - Database Loading Complete
+2020-02-27 19:15:33,488 : DEBUG :    connect() : postgres - Connecting to 10.17.50.126:5432
+2020-02-27 19:15:33,496 : DEBUG :    pg_load() : group_36- Revoking Privileges
+2020-02-27 19:15:33,501 : ERROR :      index() : group_36 - PG SQL returned : ERROR:  syntax error at or near "userid"
+LINE 1: userid,bookid,issue_date,admin_issued,return_date
+        ^
+
+2020-02-27 19:33:02,492 : DEBUG :    pg_load() : group_12 - Performing cleanup before loading
+2020-02-27 19:33:02,493 : DEBUG :    connect() : postgres - Connecting to 10.17.50.126:5432
+2020-02-27 19:33:02,538 : DEBUG :    cleanup() : group_12 - query - DROP DATABASE IF EXISTS group_12;, status - DROP DATABASE
+2020-02-27 19:33:02,670 : DEBUG :    cleanup() : group_12 - query - CREATE DATABASE group_12;, status - CREATE DATABASE
+2020-02-27 19:33:02,670 : DEBUG :    pg_load() : group_12 - Cleanup complete
+2020-02-27 19:33:02,670 : DEBUG :    pg_load() : group_12 - Running command : PGPASSWORD="vpl-362" psql -h 10.17.50.126 -d group_12 -U postgres < "../uploads/group_12/project1.sql"
+2020-02-27 19:33:06,260 : DEBUG :    pg_load() : group_12 - Database Loading Complete
+2020-02-27 19:33:06,260 : DEBUG :    connect() : postgres - Connecting to 10.17.50.126:5432
+2020-02-27 19:33:06,270 : DEBUG :    pg_load() : group_12- Revoking Privileges
+2020-02-27 19:33:06,275 : DEBUG :      index() : group_12 - Data upload successful

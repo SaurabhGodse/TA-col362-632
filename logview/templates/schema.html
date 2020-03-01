@@ -1,0 +1,84 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- CSS: Bootstrap -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap.min.css" />
+
+    <title>COL 362/632 - Project 1 - Postgres Log Viewer</title>
+
+    <style>
+        .container {
+            width: auto;
+            padding: 0 15px;
+        }
+        caption {
+            caption-side: top;
+            color: black;
+            font-size: 25pt;
+            font-weight: 300;
+            font-style: italic;
+            text-align: center;
+        }
+        p {
+            font-size: 13pt;
+            margin-top: 35px;
+        }
+    </style>
+</head>
+
+<body class="d-flex flex-column h-100">
+
+    <!-- Begin page content -->
+    <main role="main">
+        <div class="container">
+
+            <h1 class="mt-5 ">Database Schema: Group {{ group_num }}</h1>
+            <!-- <p class="lead">Showing all tables and their info</p> -->
+
+            <hr>
+            
+            {{tables | safe}}
+            
+            <hr>
+
+            {{counts | safe}}
+
+            {% for schema in schemas %}
+                <hr>
+                {{schema | safe}}
+                <br>
+            {% endfor %}
+
+        </div>
+    </main>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script>
+        $(document).ready(function () {
+            $("table").each(function (idx) { 
+                // Use bootstrap classes
+                $(this).addClass('table table-bordered');
+                
+                // Bold table/columns names for each table
+                let child = (idx == 0) ? 1 : 0;
+                $(this).find("tr").each(function () { 
+                    $(this).find(`td:eq(${child})`).css("font-weight", "bold")  
+                });
+            });
+
+            // TODO: Select all p tags
+            // TODO: Replace some text with bold etc. ?
+        });
+    </script>
+
+</body>
+
+
+</html>
